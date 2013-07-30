@@ -17,13 +17,26 @@ class Team
 		end
 	end
 
+	def home_team
+		puts team_name
+	end
 
+	def away_team
+		puts opponent
+	end
 
-
+	def won_by
+		if score.to_i > op_score.to_i
+			cal = score.to_i - op_score.to_i
+			puts "#{team_name} won by #{cal}"
+		else
+			puts "They lost"
+		end
+	end
 end
 
 
-n  = ["Charger","Patriots","Badgers"].sample
+n  = ["Chargers","Patriots","Badgers"].sample
 l  = ["San Diego","Los Angelos","New York", "Wisconsin"].sample
 s  = rand(60..90)
 o  = ["Saints","Padres","Angels"].sample
@@ -31,3 +44,6 @@ os = rand(30..90)
 
 t = Team.new(n,l,s,o,os)
 puts t.winner
+puts t.home_team
+puts t.away_team
+puts t.won_by
