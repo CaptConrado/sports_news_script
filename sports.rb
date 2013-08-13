@@ -36,14 +36,14 @@ class Team
 end
 
 
-n  = ["Chargers","Patriots","Badgers"].sample
-l  = ["San Diego","Los Angelos","New York", "Wisconsin"].sample
-s  = rand(60..90)
-o  = ["Saints","Padres","Angels"].sample
-os = rand(30..90)
+# n  = ["Chargers","Patriots","Badgers"].sample
+# l  = ["San Diego","Los Angelos","New York", "Wisconsin"].sample
+# s  = rand(60..90)
+# o  = ["Saints","Padres","Angels"].sample
+# os = rand(30..90)
 
-t = Team.new(n,l,s,o,os)
-puts t.winner
-puts t.home_team
-puts t.away_team
-puts t.won_by
+# t = Team.new(n,l,s,o,os)
+# puts t.winner
+# puts t.home_team
+# puts t.away_team
+# puts t.won_by
