@@ -27,4 +27,18 @@ describe Game do
   			new_game.winning_score.should == "42"
   		end
   	end
+
+    context "Finding the losing score" do 
+      it "should have '40' as the winning score" do
+        new_game = Game.new("Chargers","Dodgers","40","42")
+        new_game.losing_score.should == "40"
+      end
+    end
+
+    context "headline works" do
+      it "should have an interesting tagline" do
+        new_game = Game.new("Chargers","Dodgers","40","42")
+        new_game.headline.should == "The Dodgers beat the Chargers 42 to 40"
+      end
+    end
 end

@@ -8,6 +8,11 @@ class Game
 		@away_team_score = away_team_score
 	end
 
+
+	def headline
+		"The #{self.winner} beat the #{self.loser} #{self.winning_score} to #{self.losing_score}"
+	end
+
 	def winner
 		hts = home_team_score.to_i
 		ats = away_team_score.to_i
@@ -41,6 +46,16 @@ class Game
 		end
 	end
 
+	def losing_score
+		hts = home_team_score.to_i
+		ats = away_team_score.to_i
+
+		if hts < ats 
+			hts.to_s
+		else
+			ats.to_s
+		end
+	end
 
 	def self.rspec_works
     	true
