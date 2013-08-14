@@ -1,16 +1,16 @@
 class Game 
-	attr_accessor :home_team,:away_team,:home_team_score,:away_team_score
+	attr_accessor :home_team,:away_team,:home_team_score,:away_team_score, :week
 
-	def initialize(home_team,away_team,home_team_score,away_team_score) 
+	def initialize(home_team,away_team,home_team_score,away_team_score,week) 
 		@home_team = home_team
 		@away_team = away_team
 		@home_team_score = home_team_score
 		@away_team_score = away_team_score
+		@week = week
 	end
 
-
 	def headline
-		"The #{self.winner} beat the #{self.loser} #{self.winning_score} to #{self.losing_score}"
+		"The #{self.winner} beat the #{self.loser} #{self.winning_score} to #{self.losing_score} in week #{self.season_week}"
 	end
 
 	def winner
@@ -22,6 +22,14 @@ class Game
 		else
 			"#{away_team}"
 		end
+	end
+
+	def title
+		"#{home_team} vs. #{away_team}"
+	end
+
+	def season_week
+		week
 	end
 
 	def loser
