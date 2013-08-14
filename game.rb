@@ -1,6 +1,20 @@
+module Location
+	def location
+		if winner == "Chargers"
+			"San Diego"
+		elsif winner == "Dodgers"
+			"Los Angeles"
+		elsif winner == "Padres"
+			"San Diego"
+		end
+	end
+end
+
+
+
 class Game 
 	attr_accessor :home_team,:away_team,:home_team_score,:away_team_score, :week
-
+	include Location
 	def initialize(home_team,away_team,home_team_score,away_team_score,week) 
 		@home_team = home_team
 		@away_team = away_team
@@ -10,7 +24,7 @@ class Game
 	end
 
 	def headline
-		"The #{self.winner} beat the #{self.loser} #{self.winning_score} to #{self.losing_score} in week #{self.season_week}"
+		"The #{self.location} #{self.winner} beat the #{self.loser} #{self.winning_score} to #{self.losing_score} in week #{self.season_week}"
 	end
 
 	def winner
